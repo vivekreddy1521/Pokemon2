@@ -1,12 +1,77 @@
-*.class
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+package project;
 
-# Package Files #
-*.jar
-*.war
-*.ear
+import java.util.Scanner;
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+/**
+ *
+ * @author VivekReddy
+ */
+public class Project {
+
+   
+    public static void main(String[] args) {
+
+    System.out.println("Welcome to the shop");
+    System.out.println("Enter Your Choice of Pokemon");
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter how many Pikachu you need");
+    int pika=sc.nextInt();
+    System.out.println("Enter how many Squirtle you need");
+    int squl=sc.nextInt();
+    System.out.println("Enter how many Charmander you need");
+    int cham=sc.nextInt();
+    double sum=0;
+    while(true)
+    {
+     if(pika>0&&squl>0&&cham>0)
+    {
+      sum=sum+12.80;
+      pika--;
+      squl--;
+      cham--;
+    }
+    else if(pika>0&&squl>0&&cham==0)
+    {
+      sum=sum+9.90;
+      pika--;
+      squl--;
+    }
+    else if(pika>0&&squl==0&&cham>0)
+    {
+      sum=sum+9.90;
+      pika--;
+      cham--;
+    }
+    else if(pika==0&&squl>0&&cham>0)
+    {
+      sum=sum+9;
+     squl--;
+      cham--;
+    }
+    else if(pika>0&&squl==0&&cham==0)
+    {
+      sum=sum+6;
+      pika--;
+      
+    }
+    else if(pika==0&&squl>0&&cham==0)
+    {
+     sum=sum+5;
+      squl--;
+      
+    }
+    else if(pika==0&&squl==0&&cham>0)
+    {
+      sum=sum+5;
+      cham--;
+    }
+    else if(pika==0&&squl==0&&cham==0)
+    {
+     System.out.println("Total Cost = "+sum);
+    break;
+    }
+    }
+  }
+}
+
